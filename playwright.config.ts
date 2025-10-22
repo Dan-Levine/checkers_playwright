@@ -5,8 +5,15 @@ import { defineConfig, devices } from "@playwright/test";
  */
 export default defineConfig({
   testDir: "./tests",
+
+  // Set expect timeout to 30seconds, page is slow to load
+  expect: {
+    timeout: 30000
+  },
+
   /* Run tests in files in parallel */
   fullyParallel: true,
+
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [["html"], ["allure-playwright"]],
@@ -48,15 +55,5 @@ export default defineConfig({
       name: "Mobile Safari",
       use: { ...devices["iPhone 12"] },
     },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
   ],
 });
