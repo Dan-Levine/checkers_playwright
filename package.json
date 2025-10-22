@@ -1,0 +1,19 @@
+{
+    "name": "checkers-test-suite",
+    "version": "1.0.0",
+    "description": "Playwright tests for checkers game",
+    "scripts": {
+        "test": "playwright test",
+        "test:headed": "playwright test --headed",
+        "test:debug": "playwright test --debug",
+        "test:smoke": "playwright test smoke",
+        "report": "playwright show-report"
+    },
+    "keywords": [],
+    "author": "Dan Levine",
+    "license": "ISC",
+    "devDependencies": {
+        "@playwright/test": "^1.56.1",
+        "allure-playwright": "^3.4.1"
+    }
+}
